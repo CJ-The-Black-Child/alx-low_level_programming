@@ -1,10 +1,11 @@
 #include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
+
 /**
  * main - Entry Point
  *
- * Return - will return 0 for success
+ * Description: Prints the alphabets in reverse order in lowercase
+ *
+ * Return: will return 0 for success
  */
 int main(void)
 {
@@ -12,6 +13,6 @@ int main(void)
 
 	for (alpha_bet = 'z' ; alpha_bet >= 'a' ; alpha_bet--)
 		putchar(alpha_bet);
-		putchar('\n');
-		return (0);
+	putchar('\n');
+	return (0);
 }
