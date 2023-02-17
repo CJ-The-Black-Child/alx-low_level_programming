@@ -1,10 +1,11 @@
 #include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
+
 /**
  * main - Entry Point
  *
- * Return - will return 0 as success
+ * Description: Prints all single digit numbers of base 10
+ * separated by a comma followed by a spacae and ends with a new line
+ * Return:  will return 0 as success
  */
 int main(void)
 {
