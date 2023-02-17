@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
+
 /**
  * main - Entry Point
  *
- * Return - will return 0 for success
+ * Description: Prints the numbers from 0 to 9
+ * Return: will return 0 for success
  */
 int main(void)
 {
@@ -12,6 +12,6 @@ int main(void)
 
 	for (d = '0'; d <= '9'; d++)
 		putchar(d);
-		putchar('\n');
-		return (0);
+	putchar('\n');
+	return (0);
 }
