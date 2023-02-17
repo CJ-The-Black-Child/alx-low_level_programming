@@ -1,10 +1,14 @@
 #include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
+
 /**
  * main - Entry Point
  *
- * Return - returns 0 for success
+ * Description: Uses three nested for loops, with each loop iterating
+ * over the characters 0 to 9 whcih represents the digits. The program
+ * prints only combinations where the digits are in increasing order
+ * and where each digit is different from the others.
+ *
+ * Return: returns 0 for success
  */
 int main(void)
 {
