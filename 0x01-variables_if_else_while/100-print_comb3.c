@@ -1,10 +1,11 @@
 #include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
+
 /**
  * main - Entry Point
  *
- * Return - will return 0 for success
+ * Description: Prints all the single digits numbers of base 10
+ *
+ * Return: will return 0 for success
  */
 int main(void)
 {
@@ -14,6 +15,8 @@ int main(void)
 	{
 		putchar(d);
 	}
-	if (d != '9')
+	putchar(',');
+	putchar(' ');
+	putchar('\n');
+	return (0);
 }
-putchar(',');
