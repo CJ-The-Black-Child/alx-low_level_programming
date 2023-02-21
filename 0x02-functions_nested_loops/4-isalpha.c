@@ -1,9 +1,11 @@
 /*
  * File: 4-isalpha.c
  */
-#incldue "main.h"
+
+#include "main.h"
+
 /**
- * _isalpha - checks if a character is alphabetic
+ * _isalpha - Checks if a character is alphabetic
  * @c: The character thats to be checked.
  *
  * Return: 1 if the character is letter, lowercase or uppercase, otherwise.
