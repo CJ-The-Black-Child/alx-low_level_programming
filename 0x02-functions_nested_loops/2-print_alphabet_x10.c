@@ -3,7 +3,7 @@
  */
 #include "main.h"
 /**
- * Desc: print_alphabet_x10 10 times the alphabet, in lowercase.
+ * print_alphabet_x10 -  10 times the alphabet, in lowercase.
  */
 void print_alphabet_x10(void)
 {
@@ -13,8 +13,8 @@ void print_alphabet_x10(void)
 
 	for (count = 0; count <= 9; count++)
 	{
-		for (l = 'a'; l = <= 'z'; l++)
+		for (l = 'a'; l <= 'z'; l++)
 			_putchar(l);
-		_putchar('\n);
+		_putchar('\n');
 	}
 }
