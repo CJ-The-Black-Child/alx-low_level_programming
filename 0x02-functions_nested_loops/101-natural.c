@@ -3,8 +3,7 @@
  */
 #include <stdio.h>
 /**
- * main: This contains the header file
- * Description -  Lists all the natural numbers below 1024 excluded
+ * main -  Lists all the natural numbers below 1024 excluded
  * that are multiples of 3 and 5
  * Return: Always 0.
  */
