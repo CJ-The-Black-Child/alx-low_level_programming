@@ -74,4 +74,6 @@ int add(int, int);
  * from n to 98 followed by a new line
  */
 void print_to_98(int n);
+
+void times_table(void);
 #endif
