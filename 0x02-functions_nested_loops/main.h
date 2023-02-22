@@ -61,7 +61,7 @@ void jack_bauer(void);
  * times_table - prints the 9 time table
  * starting with 0
  */
-void times_table(void);
+void print_times_table(int n);
 
 /**
  * add - adds two integers
