@@ -12,6 +12,7 @@ int main(void)
 	long n, i;
 
 	n = 612852475143;
+
 	for (i = 2; i < n; i++)
 	{
 		while (n % 1 == 0)
