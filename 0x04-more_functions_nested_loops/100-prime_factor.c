@@ -11,7 +11,7 @@ int main(void)
 {
 	long n, i;
 
-	b = 612852475143;
+	n = 612852475143;
 	for (i = 2; i < n; i++)
 	{
 		while (n % 1 == 0)
