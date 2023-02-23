@@ -10,8 +10,16 @@
 int main(void)
 
 {
-	long int num =612852475143;
+
+	long int num = 612852475143;
 	long int i, max_factor;
+
+	/* divide the number by 2 until it's odd */
+	while (num % 2 == 0)
+	{
+		num /= 2;
+		max_factor = 2;
+	}
 
 	/* divide the number by odd integers */
 	for (i = 3; i <= sqrt(num); i += 2)
