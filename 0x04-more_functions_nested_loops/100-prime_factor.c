@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 /**
  * main - Entry point
@@ -9,16 +10,26 @@
 int main(void)
 
 {
-	long n, i;
+	long n, largest_prime_factor = 2;
 
 	n = 612852475143;
-
-	for (i = 2; i < n; i++)
+	while (n % 2 == 0)
 	{
-		while (n % 1 == 0)
-			n = n / i;
+		n /= 2;
 	}
-	printf("%lu\n", n);
+	for (long i = 3; i <= sqrt(n); i += 2)
+	{
+		while (n % i == 0)
+		{
+			largest_prime_factor = i;
+			n /= i;
+		}
+	}
 
+	if (n > 2)
+	{
+		largest_prime_factor = n;
+	}
+	printf("%ld\n", largest_prime_factor);
 	return (0);
 }
