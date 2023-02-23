@@ -10,26 +10,23 @@
 int main(void)
 
 {
-	long n, largest_prime_factor = 2;
+	long int num =612852475143;
+	long int i, max_factor;
 
-	n = 612852475143;
-	while (n % 2 == 0)
+	/* divide the number by odd integers */
+	for (i = 3; i <= sqrt(num); i += 2)
 	{
-		n /= 2;
-	}
-	for (long i = 3; i <= sqrt(n); i += 2)
-	{
-		while (n % i == 0)
+		while (num % i == 0)
 		{
-			largest_prime_factor = i;
-			n /= i;
+			num /= i;
+			max_factor = i;
 		}
 	}
+	/* If the remaining number is greater than 2, it is also a factor */
+	if (num > 2)
+		max_factor = num;
 
-	if (n > 2)
-	{
-		largest_prime_factor = n;
-	}
-	printf("%ld\n", largest_prime_factor);
+	printf("%ld\n", max_factor);
+
 	return (0);
 }
