@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * main - print password. Generates a random valid password for the program
+ * main - print password.
+ * Generates a random valid password for the program 101-crackme.
  *
  * Return: Always 0.
  */
@@ -23,7 +24,7 @@ int main(void)
 	if (sum != 2772)
 	{
 		diff_half1 = (sum - 2772) / 2;
-		diff_half2 = (sum - 2772) /2;
+		diff_half2 = (sum - 2772) / 2;
 
 		if ((sum - 2772) % 2 != 0)
 			diff_half1++;
@@ -33,7 +34,7 @@ int main(void)
 			if (password[index] >= (33 + diff_half1))
 			{
 				password[index] -= diff_half1;
-				
+
 				break;
 			}
 		}
@@ -46,4 +47,6 @@ int main(void)
 			}
 		}
 	}
+	printf("%s", password);
+	return (0);
 }
