@@ -5,7 +5,7 @@
  * @str: string to use.
  */
 
-void puts_half(char *str);
+void puts_half(char *str)
 {
 	int length, n, i;
 
