@@ -6,7 +6,7 @@
  *
  */
 
-void print_rev(char *s);
+void print_rev(char *s)
 {
 	int i = 0;
 	int length;
@@ -19,7 +19,5 @@ void print_rev(char *s);
 	{
 		_putchar(s[i]);
 	}
-	_putchar(s[i]);
-}
-_putchar(s[i]);
+_putchar('\n');
 }
