@@ -12,7 +12,7 @@ char *cap_string(char *str)
 
 	for (; *(str + 1) != '\0'; i++)
 	{
-		if (*(str + 1) >= 'a' && (str + i) <= 'z')
+		if (*(str + 1) >= 'a' && *(str + i) <= 'z')
 		{
 			if (i == 0)
 				*(str) += ('A' - 'a');
