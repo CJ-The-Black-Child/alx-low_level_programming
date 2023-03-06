@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_chessboard - Prints a chessboad.
+ * print_chessboard - Prints a chessboard.
  * @a: The chessboard to be printed.
  */
 void print_chessboard(char (*a)[8])
@@ -12,6 +12,6 @@ void print_chessboard(char (*a)[8])
 	{
 		for (idx2 = 0; idx2 < 8; idx2++)
 			_putchar(a[idx1][idx2]);
-		_putcahr('\n');
+		_putchar('\n');
 	}
 }
