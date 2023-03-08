@@ -24,7 +24,7 @@ int _strlen(char *str)
  * Return: 1 if palindrome 0 if not a palindrome.
  */
 
-int check_palindrome( int l, int r, char *p)
+int check_palindrome(int l, int r, char *p)
 {
 	if (l >= r)
 		return (1);

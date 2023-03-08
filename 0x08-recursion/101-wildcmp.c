@@ -34,7 +34,7 @@ int strlen_no_wilds(char *str)
  * @wildstr: The string to be iterated though.
  */
 
-void iterate_world(char **wildstr)
+void iterate_wild(char **wildstr)
 {
 	if (**wildstr++ == '*')
 	{
@@ -50,8 +50,9 @@ void iterate_world(char **wildstr)
  * @postfix: The postfix.
  *
  * Return: If str and postfix are identical - a pointer to the null byte.
- * 
- * located at the end of a postfix. otherwise - a pointer to the first unmatched character in postfix.
+ *
+ * located at the end of a postfix. otherwise - a pointer to the first
+ * unmatched character in postfix.
  */
 
 char *postfix_match(char *str, char *postfix)
