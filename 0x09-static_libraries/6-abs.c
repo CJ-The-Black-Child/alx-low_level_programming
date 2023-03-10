@@ -6,7 +6,7 @@
  * Return: the absolute value of int
  */
 
-init _abs(int n)
+int _abs(int n)
 {
 	if (n >= 0)
 	{
