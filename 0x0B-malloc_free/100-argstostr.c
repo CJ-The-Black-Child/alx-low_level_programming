@@ -2,39 +2,44 @@
 #include <stdlib.h>
 
 /**
- * argstostr - main entry
- * @ac: int input
- * @av: double pointer array
- * Return: 0
+ * argstostr - Concatenates all arguments of the program into a string;
+ * arguments are separated by a new line into a string.
+ * @ac: The number of arguments pased to the program
+ * @av: an array of pointers to the arguments
+ * Return: if ac == 0, av = NULL, or the function fails = NULL.
+ * Otherwise - a pointer to the new string
  */
+
 char *argstostr(int ac, char **av)
 {
-	int i, n, r = 0, l = 0;
 	char *str;
+	int arg, byte, index, size = ac;
 
-	if (ac == 0 || av == NULL)
-		return (NULL);
-	for (i = 0; i < ac; i++)
-	{
-		for (n = 0; av[i][n]; n++)
-			l++;
-	}
-	i += ac;
+		if (ac == 0 || av == NULL)
+			return (NULL);
 
-	str = malloc(sizeof(char) * l + 1);
-	if (str == NULL)
-		return (NULL);
-	for (i = 0; i < ac; i++)
-	{
-		for (n = 0; av[i][n]; n++)
+		for (arg = 0; arg < ac; arg++)
 		{
-			str[r] = av[i][n];
-			r++;
+			for (byte = 0; av[arg][byte]; byte++)
+				size++;
 		}
-		if (str[r] == '\0')
+
+		str = malloc(sizeof(char) * size + 1);
+
+		if (str == NULL)
+			return (NULL);
+
+		index = 0;
+
+		for (arg = 0; arg < ac; arg++)
 		{
-			str[r++] = '\n';
+			for (byte = 0; av[arg][byte]; byte++)
+				str[index++] = av[arg][byte];
+
+			str[index++] = '\n';
 		}
-	}
-	return (str);
+
+		str[size] = '\0';
+
+		return (str);
 }
