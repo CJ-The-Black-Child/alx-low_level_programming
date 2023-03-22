@@ -1,14 +1,14 @@
 #include "3-calc.h"
 #include <stdlib.h>
 /**
- * get_op_function - Selects only the correct function to perform the
+ * get_op_func - Selects only the correct function to perform the
  * operation asked by the user.
  * @s: The operator passed as argument
  *
  * Return: A pointer to the function corresponding to the operatot
  * given as a parameter
  */
-int (*get_op_function(char *s))(int, int)
+int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
 		{"+", op_add},
