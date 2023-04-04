@@ -1,68 +1,90 @@
 #include "lists.h"
-#include <stdio.h>
-
 /**
- * free_listint_safe - frees a linked list safely to avoid memory leaks
- * and dangling pointers
- * @h: pointer to the first node in the linked list
+ * print_listint_len - Counts the number of unique nodes in a looped
+ * listint_t linked list.
  *
- * Return: number of elements in the freed list
+ * @head: A pointer to the head of the listint_t to check
+ *
+ * Return: if the list is not looped -o. Otherwise the number of unique nodes
+ * in the list
  */
-
-size_free_liistint_safe(listint_t **h)
+size_t print_listint_len(const listint_t *head)
 {
-	size_t len = 0;
-	int diff;
-	listint_t *temp;
-
-	/* Check if the head pointer or the linked list is NULL */
-	if (!h || !*h)
+	/* Initialize pointers */
+	const listint_t *tortoise, *hare;
+	/* Initialize count of unique nodes */
+	size_t nodes = 1;
+	/*Check for empty or non-looped list */
+	if (head == NULL || head->next == NULL)
 		return (0);
-
-	while (*h)
+	/* Initialize pointers to first and second nodes */
+	tortoise = head->next;
+	hare = (head->next)->next;
+	/* Traverse the list until the hare hits the end or loops */
+	while (hare)
 	{
-		/*
-		 * Calculate the difference between the address of the head
-		 * and its next node
-		 */
-		diff = *h - (*h)->next;
-
-		if (diff > 0)
+		/* Check if hare and tortoise meet */
+		if (tortoise == hare)
 		{
-			/* Temporary store the pointer to the next node. */
-			temp = (*h)->next;
-
-			/* Free the current head node. */
-			free(*h);
-
-			/* Move the head pointer to the next node */
-			*h = temp;
-
-			/* Increment the number of freed nodes */
-			len++;
+			/* Reset tortoise to head*/
+			tortoise = head;
+			/* Traverse untiil hare and tortoise meet again*/
+			while (tortoise != hare)
+			{
+				nodes++;
+				tortoise = tortoise->next;
+				hare = hare->next;
+			}
+			/* Traverse the loop once more to count the nodes */
+			tortoise = tortoise->next;
+			while (tortoise != hare)
+			{
+				nodes++;
+				tortoise = tortoise->next;
+			}
+			/* Return the number of unique nodes */
+			return (nodes);
 		}
-		else
+		/* Move tortoise by one node and hare by two nodes */
+		tortoise = tortoise->next;
+		hare = (hare->next)->next;
+	}
+	/* If no loop is found, return 0 */
+	return (0); }
+/**
+ * print_listint_safe - Prints a listint_t list safely
+ *
+ * @head: A pointer to the head of the lisint_t list.
+ *
+ * Return: The number of nodes in the list.
+ */
+size_t print_listint_safe(const listint_t *head)
+{
+	size_t nodes, index = 0;
+	/* Count the number of unique nodes */
+	nodes = print_listint_len(head);
+
+	/* if list is not looped, print all nodes*/
+	if (nodes == 0)
+	{
+		for (; head != NULL; nodes++)
 		{
-			/* Free the current head node. */
-			free(*h);
-
-			/*
-			 * Set the head pointer to NULL to avoid dangling
-			 * pointers.
-			 */
-			*h = NULL;
-
-			/* Increment the number of freed nodes. */
-			len++;
-
-			/* Exit the loop. */
-			break;
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
 		}
 	}
+	/* If list is looped, print nodes up to the loop point */
+	else
+	{
+		for (index = 0; index < nodes; index++)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+		}
+		/* Print the node where the loop starts */
+		printf("->[%p] %d\n", (void *)head, head->n);
+	}
 
-	/* Set the head pointer to NULL to avoid dangling pointers. */
-	*h = NULL;
-
-	/* Return the number of freed nodes. */
-	return (len);
+	/* Return the number of nodes */
+	return (nodes);
 }
