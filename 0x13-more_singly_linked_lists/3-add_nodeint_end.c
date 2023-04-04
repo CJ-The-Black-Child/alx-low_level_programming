@@ -14,10 +14,12 @@
 
 listint_t *add_nodeint_end(listint_t **head, const int data)
 {
+	listint_t *new_node;
+	listint_t *temp;
 	/* Allocate memory for the new node */
-	listint_t *new_node = malloc(sizeof(listint_t));
+	new_node = malloc(sizeof(listint_t));
 
-	if (*!new_node)
+	if (!new_node)
 		return (NULL);
 
 	/* Initialize the new node */
@@ -33,9 +35,7 @@ listint_t *add_nodeint_end(listint_t **head, const int data)
 	}
 
 	/* Traverse the list to find the last node */
-
-	listint_t *temp = *head;
-
+	temp = *head;
 	while (temp->next != NULL)
 		temp = temp->next;
 
