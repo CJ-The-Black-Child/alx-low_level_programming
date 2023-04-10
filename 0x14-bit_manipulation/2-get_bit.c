@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_bit_at_index - Gets the value of a bit at a given index
+ * get_bit - Gets the value of a bit at a given index
  * @n: its a pointer
  * @index: The number to get the value at - indices start at 0
  * Return: if an error occurs --1. otherwise - the value of a bit at index
