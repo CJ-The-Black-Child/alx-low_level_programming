@@ -10,7 +10,7 @@
 int clear_bit(unsigned long int *n, unsigned int index)
 {
 	/* Checks if index is out of bounds */
-	if (index >= (sizeof(unsigned long int) *8))
+	if (index >= (sizeof(unsigned long int) * 8))
 		return (-1);
 
 	/* Clear bit at index to 0 */

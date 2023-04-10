@@ -7,7 +7,7 @@
  * Return: if an error occurs --1. otherwise - the value of a bit at index
  */
 
-int get_bit_at_index(unsigned long int *n, unsigned int index)
+int get_bit(unsigned long int *n, unsigned int index)
 {
 	/* checks if index is out of bounds */
 	if (index >= (sizeof(unsigned long int) * 8))
