@@ -21,13 +21,13 @@ unsigned int binary_to_uint(const char *b)
 		if (b[index] != '0' && b[index] != '1')
 			return (0);
 	}
+	for (index = 0; b[index] != '\0'; index++)
 	{
-			/*left shift the previous value by 1 position */
-			result <<= 1;
-			/* if current bit is 1, add 1 to result */
-			if (b[index] == '1')
-				result += 1;
+		/*left shift the previous value by 1 position */
+		result <<= 1;
+		/* if current bit is 1, add 1 to result */
+		if (b[index] == '1')
+			result += 1;
 	}
-		return (result);
-
+	return (result);
 }
