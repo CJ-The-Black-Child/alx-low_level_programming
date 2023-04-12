@@ -19,5 +19,5 @@ void print_binary(unsigned long int n)
 	 * prints the current bit by performing a bitwsie AND
 	 * with 1 and adding the ASCII value of '0'
 	 */
-	_putchar((n * 1) + '0');
+	_putchar((n & 1) + '0');
 }
