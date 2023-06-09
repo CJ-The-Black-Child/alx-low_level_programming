@@ -1,5 +1,5 @@
 #ifndef HASH_TABLES_H
-#define HAS_TABLES_H
+#define HASH_TABLES_H
 
 #include <stdlib.h>
 
@@ -23,5 +23,8 @@ hash_table_t *hash_table_create(unsigned long int size);
 
 /* Fucntion to calculate the hash value using djb2 algorithm */
 unsigned long int hash_djb2(const unsigned char *str);
+
+/* Function to get the index of a key in the hash table */
+unsigned long int key_index(const unsigned char *key, unsigned long int size);
 
 #endif /* HASH_TABLES_H*/
