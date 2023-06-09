@@ -32,4 +32,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 
 /* Function to Retrieve the value associated with a key in the hash table */
 char *hash_table_get(const hash_table_t *ht, const char *key);
+
+/* Function to print the element of a hash table*/
+void hash_table_print(const hash_table_t *ht);
+
 #endif /* HASH_TABLES_H*/
