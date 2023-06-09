@@ -30,8 +30,9 @@ return (1);
 current_node = current_node->next;
 }
 new_node = malloc(sizeof(hash_node_t));
-if (new_node->value == NULL)
+if (new_node == NULL)
 {
+free(new_node);
 return (0);
 }
 new_node->key = strdup(key);
