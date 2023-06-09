@@ -27,4 +27,7 @@ unsigned long int hash_djb2(const unsigned char *str);
 /* Function to get the index of a key in the hash table */
 unsigned long int key_index(const unsigned char *key, unsigned long int size);
 
+/* Function to Add or update a key/value pait in the hash table */
+int hash_table_set(hash_table_t *ht, const char *key, const char *value);
+
 #endif /* HASH_TABLES_H*/
