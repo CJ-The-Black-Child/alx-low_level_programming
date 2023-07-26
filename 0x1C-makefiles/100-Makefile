@@ -5,13 +5,11 @@ NAME = school
 RM = /bin/rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
-all: $(NAME)
-
-$(NAME): $(OBJ)
-	   $(CC) -o $@ $(OBJ)
+all: m.h $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) $(NAME) *~
+	$(RM) *~ $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
@@ -22,6 +20,5 @@ re: fclean all
 
 .PHONY: all clean oclean fclean re
 
-ifeq ("$(wildcard m.h)", "")
-$(error m.h not found!)
-endif
+m.h:
+	$(error m.h not found!)
