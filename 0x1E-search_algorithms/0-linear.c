@@ -1,4 +1,4 @@
-#include "search.algos.h"
+#include "search_algos.h"
 #include <stdio.h>
 
 /**
