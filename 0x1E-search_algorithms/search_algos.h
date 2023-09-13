@@ -8,6 +8,14 @@
 #include <math.h>
 
 /* Struct for singly linked list*/
+
+/**
+ * struct listint_s - Singly linked list node structure
+ * @n: Integer
+ * @index: Index of the node in the list
+ * @next: Pointer to the next node
+ */
+
 typedef struct listint_s
 {
 	int n;
@@ -16,6 +24,15 @@ typedef struct listint_s
 } listint_t;
 
 /* Struct for singly linked list with an express lane */
+
+/**
+ * struct skiplist_s - Singly linked list node structure with an express lane
+ * @n: Integer
+ * @index: Index of  the node in the list
+ * @next: Pointer to the next node
+ * @express: Pointer to the next node in the express lane
+ */
+
 typedef struct skiplist_s
 {
 	int n;
@@ -36,9 +53,9 @@ skiplist_t *linear_skip(skiplist_t *list, int value);
 listint_t *create_list(int *array, size_t size);
 skiplist_t *create_skiplist(int *array, size_t size);
 void print_list(const listint_t *list);
-void print_skiplist(const skiplist *list);
+void print_skiplist(const skiplist_t *list);
 void free_list(listint_t *list);
-void free_list(skiplist_t *list);
+void free_skiplist(skiplist_t *list);
 
 
 
