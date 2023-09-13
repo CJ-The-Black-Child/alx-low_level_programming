@@ -2,6 +2,46 @@
 #include <stdio.h>
 
 /**
+ * _binary_search - Searches for a value in a sorted array of integers
+ * using binary search.
+ * @array: Pointer to the first element of the array to search in.
+ * @left: The starting index of the [sub]array to search.
+ * @right: The ending index of the [sub]array to search.
+ * @value: The value to search for.
+ *
+ * Return: The index where value is located, or -1 if not found.
+ */
+int _binary_search(int *array, size_t left, size_t right, int value)
+{
+	size_t i;
+
+	if (array == NULL)
+		return (-1);
+
+	while (right >= left)
+	{
+		printf("Searching in array: %d", array[left]);
+
+		for (i = left + 1; i <= right; i++)
+		{
+			printf(", %d", array[i]);
+		}
+		printf("\n");
+
+		i = left + (right - left) / 2;
+
+		if (array[i] == value)
+			return (i);
+
+		if (array[i] > value)
+			right = i - 1;
+		else
+			left = i + 1;
+	}
+	return (-1);
+}
+
+/**
  * exponential_search - Searches for a value in a sorted array of integers
  * using the Exponential search algorithm.
  *
@@ -14,39 +54,23 @@
 
 int exponential_search(int *array, size_t size, int value)
 {
-	size_t bound = 1, low, high;
+	size_t i = 0, right;
 
-	if (array == NULL || size == 0)
+	if (array == NULL)
 		return (-1);
 
-	while (bound < size && array[bound] < value)
+	if (array[0] == value)
+		return (0);
+
+	for (i = 1; i < size && array[i] <= value; i = i * 2)
 	{
-		printf("Value checked array[%lu] = [%d]\n", bound, array[bound]);
-		bound *= 2;
+		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+		if (array[i] == value)
+			return (i);
 	}
 
-	low = bound / 2;
-	high = (bound < size - 1) ? bound : size - 1;
+	right = (i < size) ? i : size - 1;
+	printf("value found between indexes[%ld] and [%ld]\n", i / 2, right);
 
-	printf("value found between indexes[%lu] and [%lu]\n", low, high);
-
-	while (low <= high)
-	{
-		size_t mid = low + (high - low) / 2;
-
-		printf("Searching in array:%d", array[low]);
-		for (size_t i = low + 1; i <= mid; i++)
-			printf(", %d", array[i]);
-		printf("\n");
-
-		if (array[mid] == value)
-			return (mid);
-
-		if (array[mid] < value)
-			low = mid + 1;
-		else
-			high = mid - 1;
-	}
-
-	return (-1);
+	return _binary_search(array, i / 2, right, value);
 }
