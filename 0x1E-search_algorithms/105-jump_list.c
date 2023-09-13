@@ -5,7 +5,7 @@
  * Jump search algorithm.
  *
  * @list: Pointer to the head of the list to search in.
- * @size The number of nodes in the list.
+ * @size: The number of nodes in the list.
  * @value: The value to search for.
  *
  * Return: A pointer to the first node where value is located, or
@@ -28,7 +28,8 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		printf("Value checked at index [%lu] = [%d]\n", current->index, current->n);
 	}
 
-	printf("Value found between indexes [%lu] and [%lu]\n",prev->index, current->index);
+	printf("Value found between indexes [%lu] and [%lu]\n",
+		prev->index, current->index);
 	current = prev;
 	while (current && current->index < size)
 	{
